@@ -1,0 +1,397 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0d1b2e;
+    --sky: #5aabda;
+    --ice: #dff0fa;
+    --gold: #e8c36a;
+    --green-dark: #1a4a2e;
+    --green-mid: #2d7a4f;
+  }
+
+  .dining-guide {
+    background: transparent;
+    font-family: 'Nunito', sans-serif;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .page { width: 1400px; display: flex; flex-direction: column; gap: 16px; align-items: stretch; }
+  .page > * { width: 100%; }
+
+  /* TOP BANNER */
+  .banner {
+    background: var(--navy);
+    border-radius: 10px;
+    padding: 14px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+  }
+  .banner-left { display: flex; align-items: center; gap: 18px; }
+  .banner-div { width: 2px; height: 36px; background: rgba(255,255,255,0.15); border-radius: 2px; }
+  .banner h1 { font-family: 'Bebas Neue', sans-serif; font-size: 32px; color: #fff; letter-spacing: 0.06em; line-height: 1; }
+  .banner h1 span { color: var(--sky); }
+  .banner-sub { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sky); font-weight: 700; }
+  .banner-note { font-size: 12px; color: rgba(255,255,255,0.45); font-style: italic; }
+
+  /* BREAKFAST BAR */
+  .breakfast-bar {
+    background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+    border-radius: 8px;
+    padding: 9px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .breakfast-text { font-size: 13px; color: rgba(255,255,255,0.9); line-height: 1.4; }
+  .breakfast-text strong { color: #fff; }
+  .breakfast-pills { display: flex; gap: 10px; flex-shrink: 0; }
+  .b-pill { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); border-radius: 6px; padding: 4px 14px; text-align: center; }
+  .b-pill-name { font-family: 'Bebas Neue', sans-serif; font-size: 14px; color: #fff; letter-spacing: 0.06em; line-height: 1; }
+  .b-pill-time { font-size: 10px; color: rgba(255,255,255,0.7); font-weight: 700; }
+
+  /* SECTION HEADER */
+  .section-header {
+    background: #1a3a5c;
+    border-radius: 8px;
+    padding: 9px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: 20px; color: #fff; letter-spacing: 0.1em; }
+  .section-line { flex: 1; height: 1px; background: rgba(255,255,255,0.2); }
+
+  /* GRID */
+  .grid-3 {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    gap: 14px;
+    width: 100%;
+  }
+
+  /* CARD */
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid var(--ice);
+    border-top: 3px solid var(--navy);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
+    padding: 12px 16px;
+    gap: 6px;
+    min-width: 0;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .card-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--navy);
+    letter-spacing: 0.05em;
+    line-height: 1;
+  }
+
+  .card-url a {
+    font-size: 11.5px;
+    color: var(--sky);
+    font-weight: 700;
+    text-decoration: none;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    display: block;
+  }
+  .card-url a:hover { text-decoration: underline; }
+
+  .card-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--sky);
+    background: var(--ice);
+    border-radius: 4px;
+    padding: 2px 8px;
+    width: fit-content;
+  }
+
+  .card-desc {
+    font-size: 13px;
+    color: #2c3e50;
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 8px;
+    border-top: 1px solid var(--ice);
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .card-res {
+    font-size: 11px;
+    font-weight: 700;
+    color: #2c4a5e;
+    background: var(--ice);
+    border-radius: 4px;
+    padding: 2px 8px;
+  }
+
+  .card-phone {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    color: var(--navy);
+    letter-spacing: 0.04em;
+  }
+
+  .card-nores {
+    font-size: 11px;
+    font-weight: 700;
+    color: #999;
+    font-style: italic;
+  }
+
+  .card-age {
+    font-size: 10px;
+    font-weight: 800;
+    color: #c0392b;
+    background: #fdecea;
+    border-radius: 4px;
+    padding: 2px 7px;
+  }
+
+</style>
+
+<div class="dining-guide">
+<div class="page">
+
+  <!-- BANNER -->
+  <div class="banner">
+    <div class="banner-left">
+      <h1>DINING <span>RECOMMENDATIONS</span></h1>
+      <div class="banner-div"></div>
+      <div class="banner-sub">Ski Trip — Park City, UT</div>
+    </div>
+    <div class="banner-note">Reservations recommended where noted. Contact restaurants directly to book.</div>
+  </div>
+
+  <!-- BREAKFAST -->
+  <div class="breakfast-bar">
+    <div class="breakfast-text"><strong>Hot Breakfast Included</strong> — Complimentary hot breakfast at <strong>Grand Summit</strong> and <strong>Westgate Resort</strong> on <strong>Friday & Saturday, 7:00 AM – 10:00 AM</strong>. No reservation needed.</div>
+    <div class="breakfast-pills">
+      <div class="b-pill"><div class="b-pill-name">Grand Summit</div><div class="b-pill-time">7:00 AM – 10:00 AM</div></div>
+      <div class="b-pill"><div class="b-pill-name">Westgate Resort</div><div class="b-pill-time">7:00 AM – 10:00 AM</div></div>
+    </div>
+  </div>
+
+  <!-- OLD TOWN SECTION HEADER -->
+  <div class="section-header">
+    <div class="section-title">Old Town Main Street</div>
+    <div class="section-line"></div>
+  </div>
+
+  <!-- ROW 1 -->
+  <div class="grid-3">
+
+    <div class="card">
+      <div class="card-name">Riverhorse on Main</div>
+      <div class="card-url"><a href="https://www.riverhorseparkcity.com/" target="_blank">riverhorseparkcity.com</a></div>
+      <div class="card-tag">Fine Dining — American</div>
+      <div class="card-desc">Award-winning fine dining in historic Park City. Elegant atmosphere with an exceptional seasonal menu.</div>
+      <div class="card-footer">
+        <div class="card-res">Reservations: Online or Phone</div>
+        <div class="card-phone">435-649-3536</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-name">Fletchers</div>
+      <div class="card-url"><a href="http://www.fletcherspc.com/" target="_blank">fletcherspc.com</a></div>
+      <div class="card-tag">Steakhouse</div>
+      <div class="card-desc">Chop house with amazing steaks, cocktails, and wines in the heart of Park City.</div>
+      <div class="card-footer">
+        <div class="card-res">Reservations: Online or Phone</div>
+        <div class="card-phone">435.649.1111</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-name">Grappa</div>
+      <div class="card-url"><a href="https://www.grapparestaurant.com/" target="_blank">grapparestaurant.com</a></div>
+      <div class="card-tag">Italian — Upscale</div>
+      <div class="card-desc">Rustic Italian cuisine with a romantic upscale farmhouse atmosphere. Perfect for a special dinner.</div>
+      <div class="card-footer">
+        <div class="card-res">Reservations: Online or Phone</div>
+        <div class="card-phone">435-645-0636</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ROW 2 -->
+  <div class="grid-3">
+
+    <div class="card">
+      <div class="card-name">Yuki Yama</div>
+      <div class="card-url"><a href="https://www.yukiyamasushi.com/" target="_blank">yukiyamasushi.com</a></div>
+      <div class="card-tag">Japanese — Sushi</div>
+      <div class="card-desc">Traditional Japanese sushi and noodle dishes alongside creative modern sashimi plates and hot dishes.</div>
+      <div class="card-footer">
+        <div class="card-res">Reservations: Online or Phone</div>
+        <div class="card-phone">435-649-6293</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-name">Le Depot</div>
+      <div class="card-url"><a href="https://www.ledepotpc.com/" target="_blank">ledepotpc.com</a></div>
+      <div class="card-tag">French Brasserie</div>
+      <div class="card-desc">Vibrant French Brasserie with a modern twist on classics by James Beard Award-winning Chef Galen Zamarra.</div>
+      <div class="card-footer">
+        <div class="card-res">Reservations: Online or Phone</div>
+        <div class="card-phone">435-228-5001</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-name">Handle</div>
+      <div class="card-url"><a href="https://handleparkcity.com/" target="_blank">handleparkcity.com</a></div>
+      <div class="card-tag">American — Tapas Style</div>
+      <div class="card-desc">American tapas-style cuisine with locally sourced, fresh seasonal ingredients. Casual and vibrant.</div>
+      <div class="card-footer">
+        <div class="card-res">Reservations: Online or Phone</div>
+        <div class="card-phone">435-602-1155</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ROW 3 -->
+  <div class="grid-3">
+
+    <div class="card">
+      <div class="card-name">Mumbai House</div>
+      <div class="card-url"><a href="https://mumbaihousecuisine.com/" target="_blank">mumbaihousecuisine.com</a></div>
+      <div class="card-tag">Indian — GF & Vegan Options</div>
+      <div class="card-desc">Authentic Indian cuisine blending traditional recipes with fresh local ingredients. Mostly gluten free and vegan.</div>
+      <div class="card-footer">
+        <div class="card-nores">No reservations needed</div>
+        <div class="card-phone">801-581-0222</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-name">High West Distillery</div>
+      <div class="card-url"><a href="https://highwest.com/pages/saloon" target="_blank">highwest.com/pages/saloon</a></div>
+      <div class="card-tag">Whiskey Bar — American</div>
+      <div class="card-desc">Locally distilled whiskey in a rustic, warm atmosphere with a full American food menu. Walk-ups or private rooms.</div>
+      <div class="card-footer">
+        <div class="card-age">21+ Only</div>
+        <div class="card-phone">435-649-8300</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-name">Purple Sage</div>
+      <div class="card-url"><a href="https://purplesageparkcity.com/" target="_blank">purplesageparkcity.com</a></div>
+      <div class="card-tag">American Western</div>
+      <div class="card-desc">Bold and rustic American Western cuisine with an extensive wine list. A Park City classic.</div>
+      <div class="card-footer">
+        <div class="card-res">Reservations: Online or Phone</div>
+        <div class="card-phone">435-655-9505</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CANYONS VILLAGE SECTION HEADER -->
+  <div class="section-header" style="margin-top: 6px;">
+    <div class="section-title">Canyons Village Dining</div>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="grid-3">
+
+    <div class="card">
+      <div class="card-name">Kita</div>
+      <div class="card-url"><a href="https://www.pendry.com/parkcity/dining/kita/" target="_blank">pendry.com/parkcity/dining/kita</a></div>
+      <div class="card-tag">Japanese Steakhouse</div>
+      <div class="card-desc">Japanese-inspired steakhouse and mountain grill located inside the Pendry Hotel.</div>
+      <div class="card-footer">
+        <div class="card-res">Reservations: Online or Phone</div>
+        <div class="card-phone">435-800-1990</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-name">The Farm Restaurant</div>
+      <div class="card-url"><a href="https://www.exploretock.com/thefarmparkcity" target="_blank">exploretock.com/thefarmparkcity</a></div>
+      <div class="card-tag">American — Seasonal</div>
+      <div class="card-desc">Market-driven eatery with seasonal American menus, woodsy-chic décor, and an elegant bar.</div>
+      <div class="card-footer">
+        <div class="card-res">Reservations: Online or Phone</div>
+        <div class="card-phone">435-615-8080</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-name">Escala Provision Co.</div>
+      <div class="card-url"><a href="https://www.hyatt.com/hyatt-centric/slcpc-hyatt-centric-park-city/dining" target="_blank">hyatt.com — Hyatt Centric Park City</a></div>
+      <div class="card-tag">American — Comfort Food</div>
+      <div class="card-desc">Locally sourced comfort food and specialty cocktails celebrating the flavors of Utah. Inside Hyatt Centric.</div>
+      <div class="card-footer">
+        <div class="card-res">Reservations: Online or Phone</div>
+        <div class="card-phone">435-940-1234</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-name">Drafts Burger Bar</div>
+      <div class="card-url"><a href="https://www.westgateresorts.com/hotels/utah/park-city" target="_blank">westgateresorts.com — Westgate Park City</a></div>
+      <div class="card-tag">Burgers & Craft Beer</div>
+      <div class="card-desc">Large selection of beers perfectly paired with gourmet burgers, wings, and delectable sides.</div>
+      <div class="card-footer">
+        <div class="card-res">Reservations: Online or Phone</div>
+        <div class="card-phone">435-655-2270</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-name">Kuchu Shabu</div>
+      <div class="card-url"><a href="https://www.kuchushabu.com/" target="_blank">kuchushabu.com</a></div>
+      <div class="card-tag">Japanese — Hot Pot & Ramen</div>
+      <div class="card-desc">Traditional Japanese hot pot, pho, rice bowls, and ramen. Online orders welcome.</div>
+      <div class="card-footer">
+        <div class="card-nores">No reservations needed</div>
+        <div class="card-phone">435-649-0088</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-name">Windy Ridge</div>
+      <div class="card-url"><a href="https://windyridgecafe.com" target="_blank">windyridgecafe.com</a></div>
+      <div class="card-tag">Cafe & Deli</div>
+      <div class="card-desc">Gourmet deli, bakery and café serving lunch and dinner. A beloved local spot with a popular patio.</div>
+      <div class="card-footer">
+        <div class="card-res">Reservations: Online</div>
+        <div class="card-phone">435-647-0880</div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</div>
